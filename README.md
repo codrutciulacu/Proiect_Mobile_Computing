@@ -23,7 +23,7 @@ Good picks (for shape, not to copy): a field-observation logger that records sig
 
 Keep the prototype **tiny**: one or two screens. You are proving the idea, not shipping it.
 
-Fill in [`app-idea.md`](app-idea.md), including the mobile-computing framing at the bottom. You will defend those answers all semester.
+Fill in [`docs/app-idea.md`](docs/app-idea.md), including the mobile-computing framing at the bottom. You will defend those answers all semester.
 
 ## Part 2: Create your project (about 15 minutes)
 
@@ -37,7 +37,7 @@ git commit -m "New project from the Empty Activity template"
 ```
 Push it to a Git host (one your team shares, if you are working in a team). From here on this is **one evolving project**, not a new folder per lab: every later lab adds to this same repo through branches and pull requests.
 
-Copy the three templates from this folder (`app-idea.md`, `AI-USE-LOG.md`, `reflection.md`) into your new repo so your documentation lives with your code.
+Copy the three templates from this folder (`docs/app-idea.md`, `docs/AI-USE-LOG.md`, `reflection.md`) into your new repo so your documentation lives with your code.
 
 ## Part 3: Prototype with AI (about 60 minutes)
 
@@ -55,7 +55,7 @@ The term (coined by Andrej Karpathy in 2025) means giving in to the vibes: you d
 - **Ask for small pieces.** One screen, one composable, or some sample data at a time, not "build my whole app." Small requests are easier to check and to fix.
 - **Read and run everything.** Look at what it produced, run it, and see whether it does what you meant. If it does not compile or misses the point, say so specifically and iterate.
 - **Stay in charge of the structure.** You decide the screens and the shape of the data; let AI fill in the pieces. It is a fast typist, not the architect.
-- **Keep the log as you go** in [`AI-USE-LOG.md`](AI-USE-LOG.md): what you asked, what it produced, and what you kept or threw away and why. This is required, and it is far easier live than reconstructed.
+- **Keep the log as you go** in [`docs/AI-USE-LOG.md`](docs/AI-USE-LOG.md): what you asked, what it produced, and what you kept or threw away and why. This is required, and it is far easier live than reconstructed.
 
 To get more out of the in-IDE assistant, see [About Gemini in Android Studio](https://developer.android.com/studio/gemini/overview) and [6 expert tips for Gemini in Android Studio](https://android-developers.googleblog.com/2026/03/supercharge-your-android-development.html).
 
@@ -75,7 +75,7 @@ In [`reflection.md`](reflection.md), write down what broke and what is missing, 
 
 ## Part 5: The systems question
 
-Because this is a mobile computing course, answer these for your app now (in the framing section of `app-idea.md`), and expect to revisit and defend them all semester:
+Because this is a mobile computing course, answer these for your app now (in the framing section of `docs/app-idea.md`), and expect to revisit and defend them all semester:
 
 - What data lives on the device, and what lives on a server?
 - What must keep working with no signal?
@@ -88,7 +88,7 @@ You do not need final answers. You need to have started thinking like a mobile s
 ## Done when
 
 - You have your **own project repository** with a **running prototype** (your core screen or two, showing data), committed and pushed.
-- `app-idea.md`, `AI-USE-LOG.md`, and `reflection.md` are filled in and live in that repo.
+- `docs/app-idea.md`, `docs/AI-USE-LOG.md`, and `reflection.md` are filled in and live in that repo.
 - If you are working in a team, **every member has made at least one commit.**
 
 There is nothing to make "green" here: the deliverable is a prototype plus honest documentation of how you built it and what it still lacks.
