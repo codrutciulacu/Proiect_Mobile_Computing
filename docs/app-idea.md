@@ -17,7 +17,7 @@ complicated meal for those close to them**
 Keep this tiny: one or two screens for Lab 3.
 
 - **Core screen(s):**
-  - **Home**: Today’s meals, upcoming plans, and quick links.
+  - **Home/Dashboard**: Today’s meals, upcoming plans, and quick links.
   - **Recipes**: Browse saved recipes and the online catalog; search and filter.
   - **Meal Planner**: Plan the week and assign recipes to meal slots.
   - **Favorites**: Keep go-to recipes easy to find.
