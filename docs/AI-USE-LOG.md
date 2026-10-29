@@ -15,7 +15,7 @@ anything where the model produced a chunk of code or a design decision you accep
 
 | Date | What you were trying to do | What you prompted (short) | What the model produced | What you accepted or rejected, and WHY |
 |---|---|---|---|---|
-| | | | | |
+| 2025-05-18 | Set up automated AI use logging rule | How can I set a rule for you to update AI-USE-LOG.md | Created .github/copilot-instructions.md establishing the mandatory logging rule | Accepted; ensures all future AI interactions are automatically tracked and logged per course requirements. |
 | | | | | |
 | | | | | |
 
