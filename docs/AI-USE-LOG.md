@@ -21,6 +21,13 @@ anything where the model produced a chunk of code or a design decision you accep
 | 2025-05-18 | Refine card container colors | make the backgorund of photo miau miau and the items in go to favorites not purple please | Updated HomeScreenView.kt to use primary peachy container colors and primary tints for the Photo-to-Meal Scanner card and Go-To Favorites recipe placeholder boxes, removing purple accents. | Accepted; creates a consistent peachy theme across all dashboard components. |
 | 2025-05-18 | Build Recipe Page and Navigation Container | Let's make recipe page | Created RecipeScreenView.kt with search and category filtering chips, SpoonfulApp.kt as root navigation container with bottom navigation, and wired into MainActivity. | Accepted; implements the recipe catalog screen and seamless multi-tab navigation. |
 | 2025-05-18 | Fix duplicate headers and footers | why do i have 2 headers and 2 footers? | Removed the redundant inner Scaffold, TopAppBar, and NavigationBar from HomeScreenView.kt, letting SpoonfulApp act as the single root app container. | Accepted; eliminates duplicate headers/footers and ensures a single clean layout. |
+| 2025-05-18 | Build Meal Planner Screen | let's continue with the next screen in the app-idea.md | Created MealPlannerScreenView.kt supporting daily meal scheduling (Breakfast, Lunch, Dinner), day selection chips, local offline persistence banner, and integrated it into SpoonfulApp.kt. | Accepted; implements the weekly meal planner screen matching app-idea.md. |
+| 2025-05-18 | Build Favorites Screen | looks good, let's start the next | Created FavoritesScreenView.kt displaying user-saved favorite recipes with local caching framing, and expanded SpoonfulApp.kt bottom navigation to include Favorites as a dedicated tab. | Accepted; implements the favorites screen matching app-idea.md. |
+| 2025-05-18 | Build Shopping List Screen | next one | Created ShoppingListScreenView.kt with interactive check-off items, custom item addition, offline grocery store banner, and wired into SpoonfulApp.kt. | Accepted; implements the shopping list screen matching app-idea.md. |
+| 2025-05-18 | Build Recipe Detail Screen | Build the Recipe Detail screen / modal (steps, ingredients, reviews) | Created RecipeDetailScreenView.kt with interactive ingredient check-offs, step completion toggles, community reviews & submission dialog, and wired back-navigation and recipe click handlers across HomeScreenView, RecipeScreenView, MealPlannerScreenView, and FavoritesScreenView in SpoonfulApp.kt. | Accepted; implements the full recipe detail view matching all recipe fields in app-idea.md. |
+
+
+
 
 
 
