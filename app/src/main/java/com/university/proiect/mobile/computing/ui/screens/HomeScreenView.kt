@@ -22,7 +22,10 @@ import com.university.proiect.mobile.computing.ui.theme.ProiectMobileComputingTh
 
 @Composable
 fun HomeScreenView(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onRecipeClick: (RecipeItem) -> Unit = {},
+    onScanClick: () -> Unit = {},
+    onSeeAllFavoritesClick: () -> Unit = {}
 ) {
     var searchQuery by remember { mutableStateOf("") }
 
@@ -84,7 +87,7 @@ fun HomeScreenView(
                     )
                 }
                 Button(
-                    onClick = { /* Launch camera scanner */ },
+                    onClick = onScanClick,
                     colors = ButtonDefaults.buttonColors(
                         containerColor = MaterialTheme.colorScheme.primary
                     ),
@@ -116,9 +119,24 @@ fun HomeScreenView(
         }
 
         Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-            TodaysMealCard(mealType = "Breakfast", recipe = RecipeRepository.todaysMeals["Breakfast"]!!, icon = Icons.Default.FreeBreakfast)
-            TodaysMealCard(mealType = "Lunch", recipe = RecipeRepository.todaysMeals["Lunch"]!!, icon = Icons.Default.LunchDining)
-            TodaysMealCard(mealType = "Dinner", recipe = RecipeRepository.todaysMeals["Dinner"]!!, icon = Icons.Default.DinnerDining)
+            TodaysMealCard(
+                mealType = "Breakfast",
+                recipe = RecipeRepository.todaysMeals["Breakfast"]!!,
+                icon = Icons.Default.FreeBreakfast,
+                onClick = { onRecipeClick(RecipeRepository.todaysMeals["Breakfast"]!!) }
+            )
+            TodaysMealCard(
+                mealType = "Lunch",
+                recipe = RecipeRepository.todaysMeals["Lunch"]!!,
+                icon = Icons.Default.LunchDining,
+                onClick = { onRecipeClick(RecipeRepository.todaysMeals["Lunch"]!!) }
+            )
+            TodaysMealCard(
+                mealType = "Dinner",
+                recipe = RecipeRepository.todaysMeals["Dinner"]!!,
+                icon = Icons.Default.DinnerDining,
+                onClick = { onRecipeClick(RecipeRepository.todaysMeals["Dinner"]!!) }
+            )
         }
 
         // Favorite Go-To Recipes
@@ -143,7 +161,7 @@ fun HomeScreenView(
                     fontWeight = FontWeight.Bold
                 )
             }
-            TextButton(onClick = { /* View all favorites */ }) {
+            TextButton(onClick = onSeeAllFavoritesClick) {
                 Text("See All", color = MaterialTheme.colorScheme.primary)
             }
         }
@@ -155,16 +173,22 @@ fun HomeScreenView(
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             RecipeRepository.sampleRecipes.filter { it.isFavorite }.forEach { recipe ->
-                RecipeCard(recipe = recipe)
+                RecipeCard(recipe = recipe, onClick = { onRecipeClick(recipe) })
             }
         }
     }
 }
 
 @Composable
-fun TodaysMealCard(mealType: String, recipe: RecipeItem, icon: androidx.compose.ui.graphics.vector.ImageVector) {
+fun TodaysMealCard(
+    mealType: String,
+    recipe: RecipeItem,
+    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    onClick: () -> Unit = {}
+) {
     Card(
         modifier = Modifier.fillMaxWidth(),
+        onClick = onClick,
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.primaryContainer
         ),
@@ -227,7 +251,7 @@ fun TodaysMealCard(mealType: String, recipe: RecipeItem, icon: androidx.compose.
                     }
                 }
             }
-            IconButton(onClick = { /* View Recipe */ }) {
+            IconButton(onClick = onClick) {
                 Icon(Icons.Default.ChevronRight, contentDescription = "View", tint = MaterialTheme.colorScheme.primary)
             }
         }
@@ -235,11 +259,15 @@ fun TodaysMealCard(mealType: String, recipe: RecipeItem, icon: androidx.compose.
 }
 
 @Composable
-fun RecipeCard(recipe: RecipeItem) {
+fun RecipeCard(
+    recipe: RecipeItem,
+    onClick: () -> Unit = {}
+) {
     Card(
         modifier = Modifier
             .width(160.dp)
             .height(180.dp),
+        onClick = onClick,
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surfaceVariant
