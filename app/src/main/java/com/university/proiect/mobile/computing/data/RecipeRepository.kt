@@ -2,9 +2,10 @@ package com.university.proiect.mobile.computing.data
 
 import com.university.proiect.mobile.computing.model.RecipeItem
 import com.university.proiect.mobile.computing.model.RecipeReview
+import kotlin.random.Random
 
 object RecipeRepository {
-    val sampleRecipes = listOf(
+    val possibleRecipes = listOf(
         RecipeItem(
             id = "1",
             title = "Lemon Garlic Butter Pasta",
@@ -113,6 +114,10 @@ object RecipeRepository {
             )
         )
     )
+
+    val sampleRecipes = (1..500).map {
+        possibleRecipes[Random.nextInt(4)]
+    }
 
     val todaysMeals = mapOf(
         "Breakfast" to sampleRecipes[2],
