@@ -8,8 +8,8 @@ hard enough.
 
 Where did AI genuinely accelerate you? (screens, sample data, navigation, boilerplate, ...)
 
--
--
+- Whith AI it was very fast to make the screens, without having any ideas how our style should look like, whithout any figma project first. We just corrected the color theme of the app, also with the help of AI.
+- It was very fast to get our main screens going, without having to think of organizing code, app logic and such. Just the main features of our application.
 
 ## What broke when you stressed it
 
@@ -36,10 +36,11 @@ List what your prototype does not have yet. For each gap, name the lab that will
 | No mobile-computing concept beyond a UI | Lab 10 (integrated concept) |
 
 Add any gaps specific to your app that are not in the table above.
+- We just added the main app screens, without any screen logic or backend to support it. Only visual for now.
 
 ## One sentence
 
 In your own words: what is the difference between what AI gave you today and a production app, and why
 can AI not simply close that gap for you?
 
->
+> For now we only have visuals, the production app should have the whole implementation, plus we will need to adjust the user experience to fit our target users. It is a long way to go and, although AI is helping us code faster, we willneed to make decisions and see where the AI logic breaks.
