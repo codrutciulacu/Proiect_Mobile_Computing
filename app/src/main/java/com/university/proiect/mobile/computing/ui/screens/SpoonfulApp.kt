@@ -11,14 +11,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import com.university.proiect.mobile.computing.model.RecipeItem
+import com.university.proiect.mobile.computing.model.Recipe
 import com.university.proiect.mobile.computing.ui.theme.ProiectMobileComputingTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SpoonfulApp(modifier: Modifier = Modifier) {
     var selectedTab by remember { mutableIntStateOf(0) }
-    var selectedRecipeForDetail by remember { mutableStateOf<RecipeItem?>(null) }
+    var selectedRecipeForDetail by remember { mutableStateOf<Recipe?>(null) }
 
     if (selectedRecipeForDetail != null) {
         BackHandler {
