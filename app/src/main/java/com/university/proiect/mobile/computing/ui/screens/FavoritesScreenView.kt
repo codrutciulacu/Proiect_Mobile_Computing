@@ -16,13 +16,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.university.proiect.mobile.computing.data.RecipeRepository
-import com.university.proiect.mobile.computing.model.RecipeItem
+import com.university.proiect.mobile.computing.model.Recipe
 import com.university.proiect.mobile.computing.ui.theme.ProiectMobileComputingTheme
 
 @Composable
 fun FavoritesScreenView(
     modifier: Modifier = Modifier,
-    onRecipeClick: (RecipeItem) -> Unit = {}
+    onRecipeClick: (Recipe) -> Unit = {}
 ) {
     val favoriteRecipes = RecipeRepository.sampleRecipes.filter { it.isFavorite }
 
@@ -96,7 +96,7 @@ fun FavoritesScreenView(
 }
 
 @Composable
-fun FavoriteRecipeCard(recipe: RecipeItem, onClick: () -> Unit) {
+fun FavoriteRecipeCard(recipe: Recipe, onClick: () -> Unit) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         onClick = onClick,

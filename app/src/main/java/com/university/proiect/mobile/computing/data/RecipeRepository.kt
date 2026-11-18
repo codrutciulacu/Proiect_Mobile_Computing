@@ -1,12 +1,12 @@
 package com.university.proiect.mobile.computing.data
 
-import com.university.proiect.mobile.computing.model.RecipeItem
-import com.university.proiect.mobile.computing.model.RecipeReview
+import com.university.proiect.mobile.computing.model.Recipe
+import com.university.proiect.mobile.computing.model.Review
 import kotlin.random.Random
 
 object RecipeRepository {
     val possibleRecipes = listOf(
-        RecipeItem(
+        Recipe(
             id = "1",
             title = "Lemon Garlic Butter Pasta",
             prepTimeMinutes = 15,
@@ -29,11 +29,11 @@ object RecipeRepository {
             category = "Quick Dinner",
             rating = 4.9,
             reviews = listOf(
-                RecipeReview("Andrei M.", 5, "Saved my evening after a 10-hour workday! Ready in under 15 minutes."),
-                RecipeReview("Ioana D.", 5, "Zesty, rich, and super comforting. Added a pinch of chilli flakes for extra kick.")
+                Review("Andrei M.", 5, "Saved my evening after a 10-hour workday! Ready in under 15 minutes."),
+                Review("Ioana D.", 5, "Zesty, rich, and super comforting. Added a pinch of chilli flakes for extra kick.")
             )
         ),
-        RecipeItem(
+        Recipe(
             id = "2",
             title = "One-Pan Chicken Fajitas",
             prepTimeMinutes = 20,
@@ -56,11 +56,11 @@ object RecipeRepository {
             category = "High Protein",
             rating = 4.7,
             reviews = listOf(
-                RecipeReview("Mihai T.", 5, "Only one pan to wash, plenty of protein, and tastes authentic!"),
-                RecipeReview("Elena V.", 4, "Great quick dinner. Next time I will add guacamole.")
+                Review("Mihai T.", 5, "Only one pan to wash, plenty of protein, and tastes authentic!"),
+                Review("Elena V.", 4, "Great quick dinner. Next time I will add guacamole.")
             )
         ),
-        RecipeItem(
+        Recipe(
             id = "3",
             title = "Avocado Egg Toast",
             prepTimeMinutes = 10,
@@ -82,10 +82,10 @@ object RecipeRepository {
             category = "Breakfast",
             rating = 4.8,
             reviews = listOf(
-                RecipeReview("Raluca S.", 5, "My daily morning ritual. Healthy fats and keeps me full until lunch.")
+                Review("Raluca S.", 5, "My daily morning ritual. Healthy fats and keeps me full until lunch.")
             )
         ),
-        RecipeItem(
+        Recipe(
             id = "4",
             title = "Quick Beef Stir Fry",
             prepTimeMinutes = 18,
@@ -109,8 +109,8 @@ object RecipeRepository {
             category = "Quick Dinner",
             rating = 4.9,
             reviews = listOf(
-                RecipeReview("Cristian P.", 5, "Way better than takeout and 10x faster than delivery!"),
-                RecipeReview("Simona B.", 5, "The sauce glaze is perfection.")
+                Review("Cristian P.", 5, "Way better than takeout and 10x faster than delivery!"),
+                Review("Simona B.", 5, "The sauce glaze is perfection.")
             )
         )
     )

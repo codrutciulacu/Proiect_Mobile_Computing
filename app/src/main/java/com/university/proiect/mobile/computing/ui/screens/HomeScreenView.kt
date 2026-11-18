@@ -17,13 +17,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.university.proiect.mobile.computing.data.RecipeRepository
-import com.university.proiect.mobile.computing.model.RecipeItem
+import com.university.proiect.mobile.computing.model.Recipe
 import com.university.proiect.mobile.computing.ui.theme.ProiectMobileComputingTheme
 
 @Composable
 fun HomeScreenView(
     modifier: Modifier = Modifier,
-    onRecipeClick: (RecipeItem) -> Unit = {},
+    onRecipeClick: (Recipe) -> Unit = {},
     onScanClick: () -> Unit = {},
     onSeeAllFavoritesClick: () -> Unit = {}
 ) {
@@ -182,7 +182,7 @@ fun HomeScreenView(
 @Composable
 fun TodaysMealCard(
     mealType: String,
-    recipe: RecipeItem,
+    recipe: Recipe,
     icon: androidx.compose.ui.graphics.vector.ImageVector,
     onClick: () -> Unit = {}
 ) {
@@ -260,7 +260,7 @@ fun TodaysMealCard(
 
 @Composable
 fun RecipeCard(
-    recipe: RecipeItem,
+    recipe: Recipe,
     onClick: () -> Unit = {}
 ) {
     Card(

@@ -17,13 +17,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.university.proiect.mobile.computing.data.RecipeRepository
-import com.university.proiect.mobile.computing.model.RecipeItem
+import com.university.proiect.mobile.computing.model.Recipe
 import com.university.proiect.mobile.computing.ui.theme.ProiectMobileComputingTheme
 
 @Composable
 fun MealPlannerScreenView(
     modifier: Modifier = Modifier,
-    onRecipeClick: (RecipeItem) -> Unit = {}
+    onRecipeClick: (Recipe) -> Unit = {}
 ) {
     val daysOfWeek = listOf("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
     var selectedDay by remember { mutableStateOf("Monday") }
@@ -151,10 +151,10 @@ fun MealPlannerScreenView(
 @Composable
 fun MealSlotCard(
     slotName: String,
-    recipe: RecipeItem?,
+    recipe: Recipe?,
     onAssignClick: () -> Unit,
     onRemoveClick: () -> Unit,
-    onRecipeClick: (RecipeItem) -> Unit = {}
+    onRecipeClick: (Recipe) -> Unit = {}
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
