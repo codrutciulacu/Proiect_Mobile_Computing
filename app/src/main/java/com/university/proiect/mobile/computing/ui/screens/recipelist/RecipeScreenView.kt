@@ -1,4 +1,4 @@
-package com.university.proiect.mobile.computing.ui.screens
+package com.university.proiect.mobile.computing.ui.screens.recipelist
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
@@ -17,6 +17,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.university.proiect.mobile.computing.data.RecipeRepository
 import com.university.proiect.mobile.computing.model.Recipe
 import com.university.proiect.mobile.computing.ui.theme.ProiectMobileComputingTheme
@@ -25,18 +26,11 @@ import com.university.proiect.mobile.computing.ui.theme.ProiectMobileComputingTh
 @Composable
 fun RecipeScreenView(
     modifier: Modifier = Modifier,
-    onRecipeClick: (Recipe) -> Unit = {}
+    onRecipeClick: (Recipe) -> Unit = {},
+    viewModel: RecipeListViewModel = viewModel()
 ) {
-    var searchQuery by remember { mutableStateOf("") }
-    var selectedCategory by remember { mutableStateOf("All") }
     val categories = listOf("All", "Quick Dinner", "High Protein", "Breakfast")
 
-    val filteredRecipes = RecipeRepository.sampleRecipes.filter { recipe ->
-        val matchesSearch = recipe.title.contains(searchQuery, ignoreCase = true) ||
-                recipe.ingredients.any { it.contains(searchQuery, ignoreCase = true) }
-        val matchesCategory = selectedCategory == "All" || recipe.category.equals(selectedCategory, ignoreCase = true)
-        matchesSearch && matchesCategory
-    }
 
     Column(
         modifier = modifier
@@ -46,8 +40,8 @@ fun RecipeScreenView(
     ) {
         // Search Bar
         OutlinedTextField(
-            value = searchQuery,
-            onValueChange = { searchQuery = it },
+            value = viewModel.searchQuery,
+            onValueChange = { viewModel.searchQuery = it },
             modifier = Modifier.fillMaxWidth(),
             placeholder = { Text("Search recipes, ingredients...") },
             leadingIcon = { Icon(Icons.Default.Search, contentDescription = null, tint = MaterialTheme.colorScheme.primary) },
@@ -64,10 +58,10 @@ fun RecipeScreenView(
         ) {
             categories.forEach { category ->
                 FilterChip(
-                    selected = selectedCategory == category,
-                    onClick = { selectedCategory = category },
+                    selected = viewModel.selectedCategory == category,
+                    onClick = { viewModel.selectedCategory = category },
                     label = { Text(category) },
-                    leadingIcon = if (selectedCategory == category) {
+                    leadingIcon = if (viewModel.selectedCategory == category) {
                         { Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp)) }
                     } else null
                 )
@@ -75,7 +69,7 @@ fun RecipeScreenView(
         }
 
         // Recipe Catalog List
-        if (filteredRecipes.isEmpty()) {
+        if (viewModel.filteredRecipes.isEmpty()) {
             Box(
                 modifier = Modifier
                     .fillMaxSize()
@@ -94,7 +88,7 @@ fun RecipeScreenView(
                     .weight(1f),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                items(filteredRecipes) { recipe ->
+                items(viewModel.filteredRecipes) { recipe ->
                     RecipeCatalogCard(recipe = recipe, onClick = { onRecipeClick(recipe) })
                 }
             }

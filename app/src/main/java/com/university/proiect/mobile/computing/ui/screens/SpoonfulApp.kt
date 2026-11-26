@@ -12,6 +12,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.university.proiect.mobile.computing.model.Recipe
+import com.university.proiect.mobile.computing.ui.screens.recipelist.RecipeScreenView
 import com.university.proiect.mobile.computing.ui.theme.ProiectMobileComputingTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
