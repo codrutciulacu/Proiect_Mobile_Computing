@@ -21,14 +21,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.university.proiect.mobile.computing.data.RecipeRepository
-import com.university.proiect.mobile.computing.model.RecipeItem
-import com.university.proiect.mobile.computing.model.RecipeReview
+import com.university.proiect.mobile.computing.model.Recipe
+import com.university.proiect.mobile.computing.model.Review
 import com.university.proiect.mobile.computing.ui.theme.ProiectMobileComputingTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RecipeDetailScreenView(
-    recipe: RecipeItem,
+    recipe: Recipe,
     modifier: Modifier = Modifier,
     onBackClick: () -> Unit = {},
     onFavoriteToggle: (Boolean) -> Unit = {}
@@ -470,7 +470,7 @@ fun RecipeDetailScreenView(
                 Button(
                     onClick = {
                         if (newReviewAuthor.isNotBlank() && newReviewComment.isNotBlank()) {
-                            reviewList = reviewList + RecipeReview(
+                            reviewList = reviewList + Review(
                                 author = newReviewAuthor.trim(),
                                 rating = newReviewRating,
                                 comment = newReviewComment.trim()
@@ -521,7 +521,7 @@ private fun MetricChip(
 }
 
 @Composable
-private fun ReviewItemRow(review: RecipeReview) {
+private fun ReviewItemRow(review: Review) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
